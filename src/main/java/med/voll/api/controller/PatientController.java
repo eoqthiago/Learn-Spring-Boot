@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import med.voll.api.dto.patient.RegisterPatient;
+import med.voll.api.patient.dto.RegisterPatient;
 
 @RestController
 @RequestMapping("/patients")
