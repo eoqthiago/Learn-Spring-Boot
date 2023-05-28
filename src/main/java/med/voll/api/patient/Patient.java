@@ -15,11 +15,10 @@ import med.voll.api.utils.Endereco;
 
 @Table(name = "patients")
 @Entity(name = "Patient")
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
-
+@Getter
 public class Patient {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
