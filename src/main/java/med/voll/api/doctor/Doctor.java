@@ -18,14 +18,15 @@ import med.voll.api.utils.Endereco;
 
 @Table(name = "doctors")
 @Entity(name = "Doctor")
-@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
+@Getter
 public class Doctor {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	
 	private String nome;
 	private String email;
@@ -47,4 +48,6 @@ public class Doctor {
 		this.especialidade = dados.especialidade();
 		this.endereco = new Endereco(dados.endereco());
 	}
+
+
 }
