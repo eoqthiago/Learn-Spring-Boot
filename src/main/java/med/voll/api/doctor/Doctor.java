@@ -40,6 +40,8 @@ public class Doctor {
 	@Embedded
 	private Endereco endereco;
 	
+	private Boolean ativo;
+	
 	
 	public Doctor (RegisterDoctor dados) {
 		this.nome = dados.nome();
@@ -48,6 +50,7 @@ public class Doctor {
 		this.crm = dados.crm();
 		this.especialidade = dados.especialidade();
 		this.endereco = new Endereco(dados.endereco());
+		this.ativo = true;
 	}
 
 
@@ -61,6 +64,11 @@ public class Doctor {
 		if(dados.endereco() != null) {
 			this.endereco.updateAddress(dados.endereco());
 		}
+	}
+
+
+	public void situation() {
+		this.ativo = false;		
 	}
 
 

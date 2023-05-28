@@ -37,20 +37,22 @@ public class DoctorController {
 	
 	@GetMapping
 	public Page<FindCustom> findCustomList(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
-		return doctorRepository.findAll(paginacao).map(FindCustom::new);
+		return doctorRepository.findAllByAtivoTrue(paginacao).map(FindCustom::new);
 		
 	}
 	
 	@PutMapping
 	@Transactional
 	public void update (@RequestBody @Valid Update dados) {
-		var doctor = doctorRepository.getById(dados.id());
+		var doctor = doctorRepository.getReferenceById(dados.id());
 		doctor.updateData(dados);
 	}
 	
 	@DeleteMapping("/{id}")
 	@Transactional
-	public void delete(@PathVariable Long id) {
-		doctorRepository.deleteById(id);
+	public void situation(@PathVariable Long id) {
+		var doctor = doctorRepository.getReferenceById(id);
+		doctor.situation();
+		
 	}
 }
