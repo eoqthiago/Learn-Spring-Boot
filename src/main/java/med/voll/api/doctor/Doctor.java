@@ -70,6 +70,8 @@ public class Doctor {
 	public void situation() {
 		this.ativo = false;		
 	}
+	
+	
 
 
 }
