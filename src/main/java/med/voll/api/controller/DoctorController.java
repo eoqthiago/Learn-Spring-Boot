@@ -36,7 +36,7 @@ public class DoctorController {
 	public ResponseEntity registerDoctor(@RequestBody @Valid RegisterDoctor dados, UriComponentsBuilder uriBuilder) {
 		var doctor = new Doctor(dados);
 		doctorRepository.save(doctor);
-		var uri = uriBuilder.path("/doctors/{id}").buildAndExpand(doctor.getId()).toUri();
+		var uri = uriBuilder.path("doctors/{id}").buildAndExpand(doctor.getId()).toUri();
 		
 		return ResponseEntity.created(uri).body(new DataDetail(doctor));
 	}
