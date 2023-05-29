@@ -34,6 +34,8 @@ public class Patient {
 	@Embedded
 	private Endereco endereco;
 	
+	private Boolean ativo;
+	
 	public Patient (RegisterPatient dados) {
 		this.nome = dados.nome();
 		this.email = dados.email();
@@ -54,5 +56,9 @@ public class Patient {
 			this.endereco.updateAddress(dados.endereco());
 		}
 		
+	}
+
+	public void situation() {
+		this.ativo = false;
 	}
 }
