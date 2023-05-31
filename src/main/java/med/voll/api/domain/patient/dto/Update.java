@@ -1,7 +1,7 @@
-package med.voll.api.doctor.dto;
+package med.voll.api.domain.patient.dto;
 
 import jakarta.validation.constraints.NotNull;
-import med.voll.api.dto.endereco.DadosEndereco;
+import med.voll.api.domain.dto.endereco.DadosEndereco;
 
 public record Update(
 		@NotNull
@@ -9,7 +9,6 @@ public record Update(
 		String nome,
 		String telefone,
 		DadosEndereco endereco
-		
 		) {
-	
+
 }
