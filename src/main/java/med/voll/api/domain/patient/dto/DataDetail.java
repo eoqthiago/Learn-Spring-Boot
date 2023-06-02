@@ -1,7 +1,5 @@
 package med.voll.api.domain.patient.dto;
 
-
-import med.voll.api.domain.doctor.dto.Especialidade;
 import med.voll.api.domain.patient.Patient;
 import med.voll.api.utils.Endereco;
 
