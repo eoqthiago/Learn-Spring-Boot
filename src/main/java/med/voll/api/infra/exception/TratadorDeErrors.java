@@ -1,6 +1,9 @@
 package med.voll.api.infra.exception;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -21,6 +24,7 @@ public class TratadorDeErrors {
 		var erros = ex.getFieldErrors();
 		return ResponseEntity.badRequest().body(erros.stream().map(MessageError::new).toList());
 	}
+	
 	
 	private record MessageError (String campo, String message) {
 		public MessageError (FieldError erro) {

@@ -1,5 +1,12 @@
 package med.voll.api.domain.user.dto;
 
-public record DadosAuthentication(String login, String password) {
+import jakarta.validation.constraints.NotBlank;
+
+public record DadosAuthentication(
+		@NotBlank
+		String login, 
+		@NotBlank
+		String password
+		) {
 	
 }
